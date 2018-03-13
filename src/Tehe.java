@@ -1,11 +1,13 @@
 public class Tehe {
     private int vahemik;
     private String tehe;
-    private int arv1 = (int)(Math.random()*vahemik); //võtab praegu vahemiku alati 0, äkki ei vaata seda mis konstruktor annab vaid loob arvud juba enne ja võtab vahemiku automaatselt 0?
-    private int arv2 = (int)(Math.random()*vahemik);
+    private int arv1;
+    private int arv2;
     private int tulemus;
 
     public void prindiTehe(){
+        arv1 = (int)(Math.random()*vahemik);
+        arv2 = (int)(Math.random()*vahemik);
         String mark;
         if (tehe.equals("liitmine")){
             mark = " + ";

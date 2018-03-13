@@ -6,7 +6,7 @@ public class Test {
         Scanner scan = new Scanner(System.in);
         System.out.println("Millised tehted? (liitmine/lahutamine/korrutamine/jagamine/kõik):");
         String tehe = scan.next();
-        System.out.println("Mitme piires:10/20/100 ");
+        System.out.println("Mitme piires: ");
         int vahemik = scan.nextInt();
         System.out.println("Mitu tehet?: ");
         int mitu = scan.nextInt();
