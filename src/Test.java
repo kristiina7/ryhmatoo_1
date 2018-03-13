@@ -12,15 +12,11 @@ public class Test {
         int mitu = scan.nextInt();
 
         ArrayList<Integer> tulemused = new ArrayList<>();
-
         for (int i = 0; i < mitu; i++) {
-            if (tehe.equals("liitmine")){
-                Liitmine uus = new Liitmine(vahemik);
-                uus.prindi();
-                int vastus = scan.nextInt();
-                tulemused.add(uus.kontrolli(vastus));
-
-            }
+            Tehe uus = new Tehe(vahemik, tehe);
+            uus.prindiTehe();
+            int vastus = scan.nextInt();
+            tulemused.add(uus.kontrolli(vastus));
         }
 
     }
