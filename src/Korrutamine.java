@@ -12,5 +12,6 @@ public class Korrutamine extends Tehe {
         else{
             arv2 = (int)(Math.round(Math.random()*(vahemik/arv1)));//panin siia math.round sest muidu tekkisid enamus tehteid suur arv * 0
         }
+        tulemus = arv1 * arv2;
     }
 }
