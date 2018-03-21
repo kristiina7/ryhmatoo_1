@@ -1,17 +1,24 @@
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 
 public class Test {
     public static void main(String[] args) {
+        String tehe = JOptionPane.showInputDialog(null, "Millised tehted? (liitmine/lahutamine/korrutamine/jagamine/segamini):", "Tehte valimine", JOptionPane.QUESTION_MESSAGE);
+        String vah = JOptionPane.showInputDialog(null, "Mitme piires: ", "Vahemik", JOptionPane.QUESTION_MESSAGE);
+        int vahemik = Integer.parseInt(vah);
+        String kogus = JOptionPane.showInputDialog(null, "Mitu tehet?: ", "Tehete hulk", JOptionPane.QUESTION_MESSAGE);
+        int mitu = Integer.parseInt(kogus);
+
         Scanner scan = new Scanner(System.in);
-        System.out.println("Millised tehted? (liitmine/lahutamine/korrutamine/jagamine/segamini):");
+        /*System.out.println("Millised tehted? (liitmine/lahutamine/korrutamine/jagamine/segamini):");
         String tehe = scan.next();
         System.out.println("Mitme piires: ");
         int vahemik = scan.nextInt();
         System.out.println("Mitu tehet?: ");
         int mitu = scan.nextInt();
-
+*/
         ArrayList<Integer> tulemused = new ArrayList<>();
 
         for (int i = 0; i < mitu; i++) { //teeb sisestatud arvu tehteid
@@ -51,8 +58,9 @@ public class Test {
             }
 
             uus.prindiTehe();
-
-            int vastus = scan.nextInt();
+            String vastused = JOptionPane.showInputDialog(null, uus.prindiTehe(), "Vastus", JOptionPane.QUESTION_MESSAGE);
+            int vastus = Integer.parseInt(vastused);
+            //int vastus = scan.nextInt();
             tulemused.add(uus.kontrolli(vastus));
         }
         System.out.println(tulemused);

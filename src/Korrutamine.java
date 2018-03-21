@@ -1,7 +1,7 @@
 public class Korrutamine extends Tehe {
 
-    public void prindiTehe(){
-        System.out.println(arv1 + "*" + arv2);
+    public String prindiTehe(){
+        return (arv1 + "*" + arv2);
     }
 
     public Korrutamine(int vahemik){

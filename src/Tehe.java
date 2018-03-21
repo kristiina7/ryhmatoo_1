@@ -4,7 +4,7 @@ abstract public class Tehe {
     protected int arv2;
     protected int tulemus;
 
-    abstract public void prindiTehe();
+    abstract public String prindiTehe();
 
     public int kontrolli(int vastus) {
         if (vastus == tulemus) {
