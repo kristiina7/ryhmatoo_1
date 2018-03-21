@@ -6,6 +6,8 @@ public class Korrutamine extends Tehe {
 
     public Korrutamine(int vahemik){
         super(vahemik);
+        //tegin selle vahemiku 2 korda väiksemaks, siis on rohkem ka muid tehteid kui vaid *1 ja *0
+        arv1 = (int)(Math.random()*(vahemik/2));
         if (arv1 == 0){
             arv2 = (int) (Math.random() *vahemik);
         }
