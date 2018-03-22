@@ -1,4 +1,4 @@
-//Loome abstraktse peaklassi
+//Loome abstraktse ülemklass
 abstract public class Tehe {
     //loome isendiväljad nii, et saame neid samas kasutas hiljem ka kasutada
     protected int vahemik;
