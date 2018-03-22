@@ -5,20 +5,23 @@ import java.util.Scanner;
 
 public class Test {
     public static void main(String[] args) {
+        //loome aksnad ja küsime aknatest sisendid
         String tehe = JOptionPane.showInputDialog(null, "Millised tehted? (liitmine/lahutamine/korrutamine/jagamine/segamini):", "Tehte valimine", JOptionPane.QUESTION_MESSAGE);
         String vah = JOptionPane.showInputDialog(null, "Mitme piires: ", "Vahemik", JOptionPane.QUESTION_MESSAGE);
+        //arvulised sisendid teisendame täisarvudeks
         int vahemik = Integer.parseInt(vah);
         String kogus = JOptionPane.showInputDialog(null, "Mitu tehet?: ", "Tehete hulk", JOptionPane.QUESTION_MESSAGE);
         int mitu = Integer.parseInt(kogus);
 
-        Scanner scan = new Scanner(System.in);
-        /*System.out.println("Millised tehted? (liitmine/lahutamine/korrutamine/jagamine/segamini):");
+        /*Scanner scan = new Scanner(System.in);
+        System.out.println("Millised tehted? (liitmine/lahutamine/korrutamine/jagamine/segamini):");
         String tehe = scan.next();
         System.out.println("Mitme piires: ");
         int vahemik = scan.nextInt();
         System.out.println("Mitu tehet?: ");
         int mitu = scan.nextInt();
 */
+        //Loome tulemuste salvestamiseks listi
         ArrayList<Integer> tulemused = new ArrayList<>();
 
         for (int i = 0; i < mitu; i++) { //teeb sisestatud arvu tehteid
@@ -57,10 +60,13 @@ public class Test {
                 break;
             }
 
-            uus.prindiTehe();
+            //uus.prindiTehe();
+            //kuvab tehted aknasse
             String vastused = JOptionPane.showInputDialog(null, uus.prindiTehe(), "Vastus", JOptionPane.QUESTION_MESSAGE);
+            //ja loeb vastuse täisarvuna
             int vastus = Integer.parseInt(vastused);
             //int vastus = scan.nextInt();
+            //sisestab vastavalt kas 0 või 1 tulemuste listi
             tulemused.add(uus.kontrolli(vastus));
         }
         System.out.println(tulemused);
