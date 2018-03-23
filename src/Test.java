@@ -89,6 +89,7 @@ public class Test {
             //ja loeb vastuse täisarvuna
             int vastus = Integer.parseInt(vastused);
 
+
             //System.out.println(uus.prindiTehe());
             //int vastus = scan.nextInt();
 
@@ -100,7 +101,7 @@ public class Test {
         for (int el : tulemused){
             tulemus += el;
         }
-        JOptionPane.showMessageDialog(null, "Punkte: " + tulemus + "/" + vahemik, "Tulemus", JOptionPane.PLAIN_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Punkte: " + tulemus + "/" + vahemik, "Lõppulemus", JOptionPane.PLAIN_MESSAGE);
 
     }
 }

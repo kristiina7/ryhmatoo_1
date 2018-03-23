@@ -1,3 +1,5 @@
+import javax.swing.*;
+
 //Loome abstraktse ülemklass
 abstract public class Tehe {
     //loome isendiväljad nii, et saame neid samas kasutas hiljem ka kasutada
@@ -10,10 +12,12 @@ abstract public class Tehe {
     //Meetod, mis kontrollib kas sisestatud vastus on õige
     public int kontrolli(int vastus) {
         if (vastus == tulemus) {
-            System.out.println("Õige");
+            //System.out.println("Õige");
+            JOptionPane.showMessageDialog(null, "Õige", "Tulemus", JOptionPane.PLAIN_MESSAGE);
             return 1;
         } else {
-            System.out.println("Vale, õige oleks olnud: " + tulemus);
+            //System.out.println("Vale, õige oleks olnud: " + tulemus);
+            JOptionPane.showMessageDialog(null, "Vale, õige oleks olnud: " + tulemus, "Tulemus", JOptionPane.PLAIN_MESSAGE);
             return 0;
         }
     }
