@@ -8,11 +8,19 @@ public class Test {
         //loome aksnad ja küsime aknatest sisendid
         String tehe = JOptionPane.showInputDialog(null, "Millised tehted? (liitmine/lahutamine/korrutamine/jagamine/segamini):", "Tehte valimine", JOptionPane.QUESTION_MESSAGE);
         String vah = JOptionPane.showInputDialog(null, "Mitme piires: ", "Vahemik", JOptionPane.QUESTION_MESSAGE);
-        //arvulised sisendid teisendame täisarvudeks
-        int vahemik = Integer.parseInt(vah);
         String kogus = JOptionPane.showInputDialog(null, "Mitu tehet?: ", "Tehete hulk", JOptionPane.QUESTION_MESSAGE);
-        int mitu = Integer.parseInt(kogus);
-
+        int vahemik;
+        int mitu;
+        while (true) {
+            try {
+                //proovime arvulised sisendid teisendada täisarvudeks
+                vahemik = Integer.parseInt(vah);
+                mitu = Integer.parseInt(kogus);
+                break;
+            } catch (NumberFormatException e) {
+                System.out.println("Vigane sisend! Palun sisestada täisarv");
+            }
+        }
         /*Scanner scan = new Scanner(System.in);
         System.out.println("Millised tehted? (liitmine/lahutamine/korrutamine/jagamine/segamini):");
         String tehe = scan.next();
