@@ -8,7 +8,12 @@ public class Test {
         int mitu;
 
         //loome aksnad ja küsime aknatest sisendid
-        String tehe = JOptionPane.showInputDialog(null, "Millised tehted? (liitmine/lahutamine/korrutamine/jagamine/segamini):", "Tehte valimine", JOptionPane.QUESTION_MESSAGE);
+        //String tehe = JOptionPane.showInputDialog(null, "Millised tehted? (liitmine/lahutamine/korrutamine/jagamine/segamini):", "Tehte valimine", JOptionPane.QUESTION_MESSAGE);
+
+        String[] tehted = {"liitmine", "lahutamine", "korrutamine", "jagamine", "segamini"};
+        Object tehe = JOptionPane.showInputDialog(null, "Valige tehe:", "Tehte valimine",JOptionPane.INFORMATION_MESSAGE, null, tehted, tehted[0]);
+
+
         String vah = JOptionPane.showInputDialog(null, "Mitme piires: ", "Vahemik", JOptionPane.QUESTION_MESSAGE);
         String kogus = JOptionPane.showInputDialog(null, "Mitu tehet?: ", "Tehete hulk", JOptionPane.QUESTION_MESSAGE);
         while (true) {
@@ -19,6 +24,8 @@ public class Test {
                 break;
             } catch (NumberFormatException e) {
                 System.out.println("Vigane sisend! Palun sisestada täisarv");
+                vah = JOptionPane.showInputDialog(null, "Vigane sisend! Palun sisesta täisarv. Mitme piires: ", "Vahemik", JOptionPane.QUESTION_MESSAGE);
+                kogus = JOptionPane.showInputDialog(null, "Vigane sisend! Palun sisesta täisarv. Mitu tehet?: ", "Tehete hulk", JOptionPane.QUESTION_MESSAGE);
             }
         }
         Scanner scan = new Scanner(System.in);/*
@@ -79,10 +86,7 @@ public class Test {
                     default:
                         uus = new Jagamine(vahemik);
                 }
-            } else {
-                System.out.println("Vigane sisend");
-                break;
-            }
+            } else break;
 
             //kuvab tehted aknasse
             String vastused = JOptionPane.showInputDialog(null, uus.prindiTehe(), "Vastus", JOptionPane.QUESTION_MESSAGE);
@@ -101,7 +105,7 @@ public class Test {
         for (int el : tulemused){
             tulemus += el;
         }
-        JOptionPane.showMessageDialog(null, "Punkte: " + tulemus + "/" + vahemik, "Lõppulemus", JOptionPane.PLAIN_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Punkte: " + tulemus + "/" + mitu, "Lõppulemus", JOptionPane.PLAIN_MESSAGE);
 
     }
 }
