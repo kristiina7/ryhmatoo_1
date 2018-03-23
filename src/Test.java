@@ -8,27 +8,33 @@ public class Test {
         int mitu;
 
         //loome aksnad ja küsime aknatest sisendid
-        //String tehe = JOptionPane.showInputDialog(null, "Millised tehted? (liitmine/lahutamine/korrutamine/jagamine/segamini):", "Tehte valimine", JOptionPane.QUESTION_MESSAGE);
-
+        //esiteks tehte valimine
         String[] tehted = {"liitmine", "lahutamine", "korrutamine", "jagamine", "segamini"};
-        Object tehe = JOptionPane.showInputDialog(null, "Valige tehe:", "Tehte valimine",JOptionPane.INFORMATION_MESSAGE, null, tehted, tehted[0]);
+        Object tehe = JOptionPane.showInputDialog(null, "Valige tehe:", "Tehte valimine",JOptionPane.PLAIN_MESSAGE, null, tehted, tehted[0]);
 
-
+        //vahemiku valimine
         String vah = JOptionPane.showInputDialog(null, "Mitme piires: ", "Vahemik", JOptionPane.QUESTION_MESSAGE);
-        String kogus = JOptionPane.showInputDialog(null, "Mitu tehet?: ", "Tehete hulk", JOptionPane.QUESTION_MESSAGE);
         while (true) {
             try {
                 //proovime arvulised sisendid teisendada täisarvudeks
                 vahemik = Integer.parseInt(vah);
+                break;
+            } catch (NumberFormatException e) {
+                vah = JOptionPane.showInputDialog(null, "Vigane sisend! Palun sisesta täisarv. Mitme piires: ", "Vahemik", JOptionPane.QUESTION_MESSAGE);
+            }
+        }
+        //tehete arvu valimine
+        String kogus = JOptionPane.showInputDialog(null, "Mitu tehet?: ", "Tehete hulk", JOptionPane.QUESTION_MESSAGE);
+        while (true) {
+            try{
                 mitu = Integer.parseInt(kogus);
                 break;
             } catch (NumberFormatException e) {
-                System.out.println("Vigane sisend! Palun sisestada täisarv");
-                vah = JOptionPane.showInputDialog(null, "Vigane sisend! Palun sisesta täisarv. Mitme piires: ", "Vahemik", JOptionPane.QUESTION_MESSAGE);
                 kogus = JOptionPane.showInputDialog(null, "Vigane sisend! Palun sisesta täisarv. Mitu tehet?: ", "Tehete hulk", JOptionPane.QUESTION_MESSAGE);
             }
         }
-        Scanner scan = new Scanner(System.in);/*
+
+        /*Scanner scan = new Scanner(System.in);
         System.out.println("Millised tehted? (liitmine/lahutamine/korrutamine/jagamine/segamini):");
         String tehe = scan.next();
         System.out.println("Mitme piires: ");
@@ -57,6 +63,7 @@ public class Test {
                 kogus = scan.next();
             }
         }*/
+
         //Loome tulemuste salvestamiseks listi
         ArrayList<Integer> tulemused = new ArrayList<>();
 
@@ -92,7 +99,6 @@ public class Test {
             String vastused = JOptionPane.showInputDialog(null, uus.prindiTehe(), "Vastus", JOptionPane.QUESTION_MESSAGE);
             //ja loeb vastuse täisarvuna
             int vastus = Integer.parseInt(vastused);
-
 
             //System.out.println(uus.prindiTehe());
             //int vastus = scan.nextInt();
