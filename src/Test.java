@@ -106,7 +106,6 @@ public class Test {
             //sisestab vastavalt kas 0 või 1 tulemuste listi
             tulemused.add(uus.kontrolli(vastus));
         }
-        System.out.println(tulemused);
         int tulemus = 0;
         for (int el : tulemused){
             tulemus += el;
